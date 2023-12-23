@@ -1,0 +1,12 @@
+SELECT actor_id,first_name,last_name FROM sakila.actor
+WHERE first_name LIKE '%John%' OR first_name LIKE '%Lucille%'
+
+
+SELECT * FROM sakila.address WHERE address LIKE '%1%' LIMIT 3,10
+
+
+SELECT title, category.name
+FROM sakila.film 
+JOIN sakila.film_category as film_category ON sakila.film.film_id = film_category.film_id
+JOIN sakila.category as category ON category.category_id = film_category.category_id
+where film_category.film_id = sakila.film.film_id;
